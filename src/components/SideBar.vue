@@ -1,137 +1,157 @@
 <template>
-    <div class="sidebar">
+
+    <section class="side">
+
+        <header>
+
+            <img src="../assets/Sociality-logo.png" alt="" class="mt-3">
+
+        </header>
+
+
+        <div class="sidebar d-flex">
 
 
 
-        <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;">
+            <div class="d-flex flex-column sideBarFirst flex-shrink-0 " style="width: 77px;">
 
 
-            <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
-                <li class="nav-item">
-                    <a href="#" class="nav-link active py-3 border-bottom" aria-current="page" title=""
-                        data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
-                        <i class="bi bi-alarm"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip"
-                        data-bs-placement="right" data-bs-original-title="Dashboard">
-                        <i class="bi bi-1-circle-fill"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip"
-                        data-bs-placement="right" data-bs-original-title="Orders">
-                        <i class="bi bi-1-circle-fill"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip"
-                        data-bs-placement="right" data-bs-original-title="Products">
-                        <i class="bi bi-1-circle-fill"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip"
-                        data-bs-placement="right" data-bs-original-title="Customers">
-                        <i class="bi bi-1-circle-fill"></i>
-                    </a>
-                </li>
-            </ul>
+                <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+
+
+                    <li @click="activeToggle" class="nav-link">
+                        <img src="../assets/Logo4.png" style="cursor:pointer"  >
+
+                    </li>
+                    <li @click="activeToggle" class="nav-link">
+
+                        <img src="../assets/Logo4.png" style="cursor:pointer"  >
+
+                    </li>
+                    <li @click="activeToggle" class="nav-link active">
+                        <img src="../assets/Logo4.png" style="cursor:pointer"  >
+
+                    </li>
+                    <li @click="activeToggle" class="nav-link">
+                        <img src="../assets/Logo4.png" style="cursor:pointer"  >
+
+                    </li>
+                    <li @click="activeToggle" class="nav-link">
+                        <img src="../assets/Logo4.png" style="cursor:pointer"  >
+
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="flex-shrink-0 sideBarSec text-start" style="width: 211px;">
+
+                <ul class="list-unstyled ps-0 ">
+                    <li class="mb-1">
+                        <div class="btntext">
+                            <h5><span><i class="bi bi-bell text-center"></i></span>Notifications</h5>
+                        </div>
+                    </li>
+
+                    <li class="mb-1">
+                        <button class="btn btn-toggle rounded collapsed justify-content-start" @click="collapseOpen"
+                            data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                            <div class="btntext">
+
+
+                                <h5><span><i class="bi bi-graph-up-arrow"></i></span>summary</h5>
+                                <div class="plus-button">
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+
+                        </button>
+                        <div class="collapse" id="home-collapse">
+                            <ul class="btn-toggle-nav  fw-normal pb-1 small text-light">
+                                <li><a href="#">Overview</a></li>
+                                <li><a href="#">Updates</a></li>
+                                <li><a href="#">Reports</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse"
+                            @click="collapseOpen" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                            <div class="btntext">
+                                <h5> <span><i class="bi bi-pencil-square"></i></span> Publish</h5>
+                                <div class="plus-button" :class="{open: open}">
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="collapse" id="dashboard-collapse" style="">
+                            <ul class="btn-toggle-nav  fw-normal pb-1 small text-light">
+                                <li><a href="#">Compose</a></li>
+                                <li><a href="#">Feed</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse"
+                            @click="collapseOpen" data-bs-target="#orders-collapse" aria-expanded="false">
+                            <div class="btntext">
+                                <h5> <span><i class="bi bi-chat-left-text-fill"></i></span> Engage </h5>
+                                <div class="plus-button" :class="{open: open}">
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="collapse" id="orders-collapse" style="">
+                            <ul class="btn-toggle-nav  fw-normal pb-1 small text-light">
+                                <li><a href="#">New</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse"
+                            @click="collapseOpen" data-bs-target="#account-collapse" aria-expanded="false">
+                            <div class="btntext">
+                                <h5> <span><i class="bi bi-activity"></i></span> Listen</h5>
+                                <div class="plus-button" :class="{open: open}">
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="collapse" id="account-collapse" style="">
+                            <ul class="btn-toggle-nav fw-normal pb-1 small text-light ">
+                                <li><a href="#">New...</a></li>
+                                <li><a href="#">Report</a></li>
+                                
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse"
+                            @click="collapseOpen" data-bs-target="#report-collapse" aria-expanded="false">
+                            <div class="btntext">
+                                <h5> <span><i class="bi bi-bar-chart-line"></i></span> Report</h5>
+                                <div class="plus-button" :class="{open: open}">
+                                    <div class="plus-icon"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="collapse" id="report-collapse" style="">
+                            <ul class="btn-toggle-nav fw-normal pb-1 small text-light">
+                                
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">saasd</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
 
         </div>
-
-
-        <div class="flex-shrink-0 sideBarSec text-start" style="width: 280px;">
-            <a href="/" class="d-flex  pt-3 mb-3 link-dark text-decoration-none">
-                <svg class="bi me-2" width="30" height="24">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="fs-5 fw-semibold">Collapsible</span>
-            </a>
-            <ul class="list-unstyled ps-0 ">
-                <li class="mb-1">
-                    <button class="btn btn-toggle  rounded collapsed justify-content-start " @click="collapseOpen"
-                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                        <div class="btntext">
-                            <h5>Home</h5>
-                            <div class="plus-button" >
-                                <div class="plus-icon"></div>
-                            </div>
-                        </div>
-
-                    </button>
-                    <div class="collapse" id="home-collapse">
-                        <ul class="btn-toggle-nav  fw-normal pb-1 small">
-                            <li><a href="#" >Overview</a></li>
-                            <li><a href="#" >Updates</a></li>
-                            <li><a href="#" >Reports</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse" @click="collapseOpen"
-                        data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        <div class="btntext">
-                            <h5>Home</h5>
-                            <div class="plus-button" :class="{open: open}">
-                                <div class="plus-icon"></div>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="collapse" id="dashboard-collapse" style="">
-                        <ul class="btn-toggle-nav  fw-normal pb-1 small">
-                            <li><a href="#" >Overview</a></li>
-                            <li><a href="#" >Weekly</a></li>
-                            <li><a href="#" >Monthly</a></li>
-                            <li><a href="#" >Annually</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse" @click="collapseOpen"
-                        data-bs-target="#orders-collapse" aria-expanded="false">
-                        <div class="btntext">
-                            <h5>Home</h5>
-                            <div class="plus-button" :class="{open: open}">
-                                <div class="plus-icon"></div>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="collapse" id="orders-collapse" style="">
-                        <ul class="btn-toggle-nav  fw-normal pb-1 small">
-                            <li><a href="#" >New</a></li>
-                            <li><a href="#" >Processed</a></li>
-                            <li><a href="#" >Shipped</a></li>
-                            <li><a href="#" >Returned</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="border-top my-3"></li>
-                <li class="mb-1">
-                    <button class="btn btn-toggle  rounded collapsed" data-bs-toggle="collapse" @click="collapseOpen"
-                        data-bs-target="#account-collapse" aria-expanded="false">
-                        <div class="btntext">
-                            <h5>Home</h5>
-                            <div class="plus-button" :class="{open: open}">
-                                <div class="plus-icon"></div>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="collapse" id="account-collapse" style="">
-                        <ul class="btn-toggle-nav fw-normal pb-1 small text-light">
-                            <li><a href="#" >New...</a></li>
-                            <li><a href="#" >Profile</a></li>
-                            <li><a href="#" >Settings</a></li>
-                            <li><a href="#" >Sign out</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-
-    </div>
+    </section>
 
 </template>
 
@@ -145,7 +165,19 @@ export default {
     },
     methods: {
         collapseOpen: function (event) {
-            event.target.querySelector(".plus-button").classList.toggle('open')
+            console.log(event.target)
+            if (event.target.querySelector(".plus-button") === null) {
+                event.target.parentNode.parentNode.querySelector(".plus-button").classList.toggle('open')
+            } else {
+                event.target.querySelector(".plus-button").classList.toggle('open')
+            }
+
+        },
+        activeToggle: function (event) {
+            for (const li of event.target.parentNode.parentNode.querySelectorAll(".nav-link")) {
+                li.classList.remove("active");
+            }
+            event.target.parentNode.classList.toggle('active')
         }
     }
 }
@@ -160,32 +192,73 @@ export default {
     --sidebarred: #F55661;
 
 }
+header{
+    height: 53px;
+    background-color: rgba(49, 54, 59, 1);
+    margin: 0;
+    padding: 0;
+}
+
+.side {
+    position: fixed;
+}
 
 .sidebar {
     display: flex;
     flex-wrap: nowrap;
     height: 100vh;
-
     overflow-x: auto;
     overflow-y: hidden;
+
+}
+
+.sideBarFirst {
+    background-color: rgba(42, 47, 51, 1);
 }
 
 .sideBarSec {
     background-color: var(--sidebarbg);
-}
 
-body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-}
-
-html {
-    height: -webkit-fill-available;
 }
 
 
 
+.sideBarFirst .nav li {
 
+
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+
+
+
+.sideBarFirst .nav-link img{
+    opacity: .3;
+}
+
+.sideBarFirst .nav-link.active img{
+    opacity: 1;
+    background-color: unset;
+
+}
+.sideBarFirst .nav-link.active{
+    
+    background-color: unset;
+
+}
+
+.sideBarFirst .nav-link.active::before {
+    content: "\00a0";
+    position: absolute;
+    background-color: #F55661;
+    left: 0%;
+    height: 70%;
+    border-radius: 20%;
+
+}
 
 .bi {
     vertical-align: -.125em;
@@ -240,7 +313,7 @@ html {
     padding: 0.1875rem 1rem;
     margin-top: 0.125rem;
     margin-left: -.5rem;
-    list-style:inside;
+    list-style: inside;
 
 }
 
@@ -261,6 +334,7 @@ html {
     position: relative;
     display: flex;
     width: 100%;
+
 
     height: 3rem;
 }
@@ -317,14 +391,37 @@ html {
     transform: rotate3d(0, 0, 0, 90deg);
 }
 
-.btntext h5 {
-    margin: auto 0;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: rgba(0, 0, 0, .65);
-    margin-left: 1rem !important;
+.btn-toggle-nav li a{
+    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    opacity: .9;
+}
+.btn-toggle-nav li a:hover{
+    
+    color: var(--sidebarred);
+    
 }
 
+.btntext h5 {
+    font-family: 'Raleway', sans-serif;
+    margin: auto 0;
+    text-transform: uppercase;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #FFFEFE;
+
+
+}
+
+.btntext h5 span {
+    color: var(--sidebarred);
+    margin: 1rem;
+    font-size: 1.3rem;
+}
+
+.btn-toggle:not(.collapsed) .btntext h5 span {
+    color: #FFFEFE;
+}
 
 
 .collapse.show {
