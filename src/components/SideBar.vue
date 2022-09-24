@@ -69,9 +69,15 @@
                         </button>
                         <div class="collapse" id="home-collapse">
                             <ul class="btn-toggle-nav  fw-normal pb-1 small text-light">
-                                <li><a href="#">Overview</a></li>
-                                <li><a href="#">Updates</a></li>
-                                <li><a href="#">Reports</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Overview</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Updates</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Reports</a></li>
                             </ul>
                         </div>
                     </li>
@@ -87,8 +93,12 @@
                         </button>
                         <div class="collapse" id="dashboard-collapse" style="">
                             <ul class="btn-toggle-nav  fw-normal pb-1 small text-light">
-                                <li><a href="#">Compose</a></li>
-                                <li><a href="#">Feed</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Compose</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Feed</a></li>
                                 
                             </ul>
                         </div>
@@ -105,7 +115,9 @@
                         </button>
                         <div class="collapse" id="orders-collapse" style="">
                             <ul class="btn-toggle-nav  fw-normal pb-1 small text-light">
-                                <li><a href="#">New</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">New</a></li>
                                 
                             </ul>
                         </div>
@@ -122,8 +134,12 @@
                         </button>
                         <div class="collapse" id="account-collapse" style="">
                             <ul class="btn-toggle-nav fw-normal pb-1 small text-light ">
-                                <li><a href="#">New...</a></li>
-                                <li><a href="#">Report</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">New...</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Report</a></li>
                                 
                             </ul>
                         </div>
@@ -141,8 +157,12 @@
                         <div class="collapse" id="report-collapse" style="">
                             <ul class="btn-toggle-nav fw-normal pb-1 small text-light">
                                 
-                                <li><a href="#">Settings</a></li>
-                                <li><a href="#">saasd</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">Settings</a></li>
+                                <li>
+                                    <i class="bi bi-dot "></i>
+                                    <a href="#">saasd</a></li>
                             </ul>
                         </div>
                     </li>
@@ -310,11 +330,14 @@ header{
 }
 
 .btn-toggle-nav li {
-    padding: 0.1875rem 1rem;
+    padding: 0.1875rem 0;
     margin-top: 0.125rem;
     margin-left: -.5rem;
-    list-style: inside;
+    list-style: none;
 
+}
+.btn-toggle-nav li i{
+    font-size: 25px;
 }
 
 .scrollarea {
@@ -357,7 +380,8 @@ header{
     display: block;
     width: 20px;
     height: 3px;
-    background-color: #0a4e9b;
+    background-color: var(--bgcolor);
+    opacity: .8;
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
     user-select: none;
@@ -381,7 +405,7 @@ header{
     transform-origin: 10px center;
     transform: rotate3d(0, 0, 1, 90deg);
     color: red;
-    background-color: #0a4e9b;
+    background-color: var(--bgcolor);
 }
 
 .open.plus-button .plus-icon:before,
@@ -396,7 +420,7 @@ header{
     color: #FFFFFF;
     opacity: .9;
 }
-.btn-toggle-nav li a:hover{
+.btn-toggle-nav li:hover a, .btn-toggle-nav li:hover{
     
     color: var(--sidebarred);
     
